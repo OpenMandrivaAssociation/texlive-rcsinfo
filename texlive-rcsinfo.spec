@@ -56,6 +56,7 @@ rcsinfo.perl is included.
 %doc %{_texmfdistdir}/source/latex/rcsinfo/Makefile
 %doc %{_texmfdistdir}/source/latex/rcsinfo/rcsinfo.dtx
 %doc %{_texmfdistdir}/source/latex/rcsinfo/rcsinfo.ins
+%doc %{_tlpkgobjdir}/*.tlpobj
 
 #-----------------------------------------------------------------------
 %prep
@@ -66,3 +67,5 @@ rcsinfo.perl is included.
 %install
 mkdir -p %{buildroot}%{_texmfdistdir}
 cp -fpar tex doc source %{buildroot}%{_texmfdistdir}
+mkdir -p %{buildroot}%{_tlpkgobjdir}
+cp -fpa tlpkg/tlpobj/*.tlpobj %{buildroot}%{_tlpkgobjdir}
