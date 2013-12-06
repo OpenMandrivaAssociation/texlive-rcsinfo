@@ -6,7 +6,7 @@
 # catalog-version 1.11
 Name:		texlive-rcsinfo
 Version:	1.11
-Release:	2
+Release:	3
 Summary:	Support for the revision control system
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/rcsinfo
