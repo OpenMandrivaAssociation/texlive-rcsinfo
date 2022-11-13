@@ -1,19 +1,13 @@
-# revision 15878
-# category Package
-# catalog-ctan /macros/latex/contrib/rcsinfo
-# catalog-date 2007-01-06 10:07:33 +0100
-# catalog-license lppl
-# catalog-version 1.11
 Name:		texlive-rcsinfo
-Version:	1.11
-Release:	11
+Version:	15878
+Release:	1
 Summary:	Support for the revision control system
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/rcsinfo
 License:	LPPL
-Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/rcsinfo.tar.xz
-Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/rcsinfo.doc.tar.xz
-Source2:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/rcsinfo.source.tar.xz
+Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/rcsinfo.r%{version}.tar.xz
+Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/rcsinfo.doc.r%{version}.tar.xz
+Source2:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/rcsinfo.source.r%{version}.tar.xz
 BuildArch:	noarch
 BuildRequires:	texlive-tlpkg
 Requires(pre):	texlive-tlpkg
@@ -25,12 +19,12 @@ and use it in a LaTeX document. For users of LaTeX2HTML
 rcsinfo.perl is included.
 
 %post
-    %{_sbindir}/texlive.post
+%{_sbindir}/texlive.post
 
 %postun
-    if [ $1 -eq 0 ]; then
+if [ $1 -eq 0 ]; then
 	%{_sbindir}/texlive.post
-    fi
+fi
 
 #-----------------------------------------------------------------------
 %files
@@ -49,24 +43,11 @@ rcsinfo.perl is included.
 
 #-----------------------------------------------------------------------
 %prep
-%setup -c -a0 -a1 -a2
+%setup -c -a1 -a2
+%autopatch -p1
 
 %build
 
 %install
 mkdir -p %{buildroot}%{_texmfdistdir}
 cp -fpar tex doc source %{buildroot}%{_texmfdistdir}
-
-
-%changelog
-* Wed Jan 04 2012 Paulo Andrade <pcpa@mandriva.com.br> 1.11-2
-+ Revision: 755582
-- Rebuild to reduce used resources
-
-* Sat Nov 05 2011 Paulo Andrade <pcpa@mandriva.com.br> 1.11-1
-+ Revision: 719433
-- texlive-rcsinfo
-- texlive-rcsinfo
-- texlive-rcsinfo
-- texlive-rcsinfo
-
