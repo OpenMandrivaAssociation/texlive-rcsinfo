@@ -1,6 +1,6 @@
 Name:		texlive-rcsinfo
 Version:	15878
-Release:	1
+Release:	2
 Summary:	Support for the revision control system
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/rcsinfo
